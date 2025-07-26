@@ -133,15 +133,15 @@ Below are improved and organized screenshots of the DApp and its features:
 <table>
   <tr>
     <td align="center"><b>Main Dashboard</b><br>
-      <img src="image.png" width="850"/>
+      <img src="./pics/image.png" width="850"/>
     </td>
     <td align="center"><b>Funding Page</b><br>
-      <img src="image-5.png" width="850"/>
+      <img src=" ./pics/image-5.png" width="850"/>
     </td>
   </tr>
   <tr>
     <td align="center"><b>Transaction Page</b><br>
-      <img src="image-7.png" width="250" height="400"/>
+      <img src="./pics/image-7.png" width="250" height="400"/>
     </td>
     <td align="center"><b>Additional UI</b><br>
       <img src="./pics/image-6.png" width= 250" height="400"/>
