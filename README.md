@@ -136,7 +136,7 @@ Below are improved and organized screenshots of the DApp and its features:
       <img src="./pics/image.png" width="850"/>
     </td>
     <td align="center"><b>Funding Page</b><br>
-      <img src=" ./pics/image-5.png" width="850"/>
+      <img src="./pics/image-5.png" width="850"/>
     </td>
   </tr>
   <tr>
