@@ -133,42 +133,56 @@ Below are improved and organized screenshots of the DApp and its features:
 <table>
   <tr>
     <td align="center"><b>Main Dashboard</b><br>
-      <img src="./pics/image.png" width="850"/>
+      <img src="./pics/image.png" width="850" align="center"/>
     </td>
     <td align="center"><b>Funding Page</b><br>
-      <img src="./pics/image-5.png" width="850"/>
+      <img src="./pics/image-5.png" width="850" align="center"/>
     </td>
   </tr>
   <tr>
     <td align="center"><b>Transaction Page</b><br>
-      <img src="./pics/image-7.png" width="250" height="400"/>
+      <img src="./pics/image-7.png" width="250" height="400" align="center"/>
     </td>
     <td align="center"><b>Additional UI</b><br>
-      <img src="./pics/image-6.png" width= 250" height="400"/>
+      <img src="./pics/image-6.png" width="250" height="400" align="center"/>
     </td>
   </tr>
   <tr>
     <td align="center"><b>Transaction Proof</b><br>
-      <img src="./pics/image-1.png" width="850"/>
+      <img src="./pics/image-1.png" width="850" align="center"/>
     </td>
     <td align="center"><b>Web View</b><br>
-      <img src="./pics/image-2.png" width="850"/>
+      <img src="./pics/image-2.png" width="850" align="center"/>
     </td>
   </tr>
   <tr>
     <td align="center"><b>Footer</b><br>
-      <img src="./pics/image-3.png" width="850"/>
+      <img src="./pics/image-3.png" width="850" align="center"/>
     </td>
     <td align="center"><b>Withdraw</b><br>
-      <img src="./pics/image-4.png" width="850"/>
+      <img src="./pics/image-4.png" width="850" align="center"/>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Hardhat Node Transaction</b><br>
+      <img src="./pics/image-8.png" width="850" align="center"/>
+    </td>
+    <td align="center"><b>Unit Test and Gas Report</b><br>
+      <img src="./pics/image-9.png" width="850" align="center"/>
     </td>
   </tr>
   <tr>
-    <td align="center"><b>Hardhat Node Transaction</b><br>
-      <img src="./pics/image-8.png" width="850" />
+    <td align="center"><b>Chainlink Node</b><br>
+      <img src="./pics/Chainlink-node-operator-3.png" width="850" align="center"/>
     </td>
-    <td align="center"><b>Unit Test and Gas Report</b><br>
-      <img src="./pics/image-9.png" width="850"/>
+    <td align="center"><b>Price Feed</b><br>
+      <img src="./pics/Three-Levels-of-2.png" width="1000" align="center"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><b>Three-Level Insert</b><br>
+      <img src="./pics/Price-Feeds-1.png" width="850" align="center"/>
     </td>
   </tr>
 </table>
