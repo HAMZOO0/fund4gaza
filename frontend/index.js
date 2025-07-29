@@ -86,6 +86,10 @@ async function getBalance() {
       alert(`Contract Balance: ${ethers.utils.formatEther(string_balance)} ETH`);
 
       console.log(ethers.utils.formatEther(string_balance));
+
+      // Test basic call
+      const testCall = await contract.provider.getCode(ContractAddress);
+      console.log("Contract code at address:", testCall);
    }
 }
 
