@@ -88,7 +88,7 @@ async function getBalance() {
       console.log(ethers.utils.formatEther(string_balance));
 
       // Test basic call
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      // const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(ContractAddress, abi, signer);
 
