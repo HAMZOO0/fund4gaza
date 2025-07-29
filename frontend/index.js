@@ -90,23 +90,30 @@ async function getBalance() {
 }
 
 async function findContractOwner() {
-   const provider = new ethers.providers.Web3Provider(window.ethereum);
-   const signer = provider.getSigner();
-   const contract = new ethers.Contract(ContractAddress, abi, signer);
-   const currentUser = await signer.getAddress();
-   const owner = await contract.getOwner();
+   try {
+      console.log("Contract Address:", ContractAddress);
+      console.log("ABI:", abi);
 
-   console.log("🔑 Contract Owner:", owner);
-   alert(`Contract Owner : ${owner}`);
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(ContractAddress, abi, signer);
 
-   if (owner.toLowerCase() == currentUser.toLowerCase()) {
-      console.log("🧑 You (Connected Account):", currentUser);
-      console.log("✅ You ARE the contract owner");
+      // Test basic call
+      const testCall = await contract.provider.getCode(ContractAddress);
+      console.log("Contract code at address:", testCall);
 
-      return true;
-   } else {
-      console.log("❌ You are NOT the contract owner");
+      const owner = await contract.getOwner();
+      const currentUser = await signer.getAddress();
 
-      return false;
+      console.log("Owner:", owner, "Current User:", currentUser);
+      return owner.toLowerCase() === currentUser.toLowerCase();
+   } catch (error) {
+      console.error("Full error details:", {
+         error,
+         message: error.message,
+         data: error.data,
+         stack: error.stack,
+      });
+      throw error; // Re-throw to see complete error in console
    }
 }
