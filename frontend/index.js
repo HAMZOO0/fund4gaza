@@ -24,13 +24,10 @@ async function connect() {
       // console.log(ethers);
 
       // connect with metamask
-      document.getElementById(
-         "connectButton"
-      ).innerHTML = `Connected ${account[0]}`;
+      document.getElementById("connectButton").innerHTML = `Connected ${account[0]}`;
    } else {
       console.log("Meta-Mask Not Found");
-      document.getElementById("connectButton").innerHTML =
-         "Please Install MetaMask!";
+      document.getElementById("connectButton").innerHTML = "Please Install MetaMask!";
    }
 }
 async function fund() {
@@ -62,9 +59,15 @@ async function fund() {
    }
 }
 async function withdraw() {
+   const isOwner = await findContractOwner();
+
    // const provider = new ethers.providers.Web3Provider(window.ethereum);
    // const signer = provider.getSigner();
    const contract = new ethers.Contract(ContractAddress, abi, signer);
+   if (!isOwner) {
+      alert("Only the contract owner can withdraw funds");
+      return;
+   }
 
    try {
       const txResponse = await contract.cheaperWithdraw();
@@ -80,6 +83,8 @@ async function getBalance() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const balance = await provider.getBalance(ContractAddress);
       const string_balance = balance.toString();
+      alert(`Contract Balance: ${ethers.utils.formatEther(string_balance)} ETH`);
+
       console.log(ethers.utils.formatEther(string_balance));
    }
 }
@@ -88,16 +93,20 @@ async function findContractOwner() {
    const provider = new ethers.providers.Web3Provider(window.ethereum);
    const signer = provider.getSigner();
    const contract = new ethers.Contract(ContractAddress, abi, signer);
-
-   const owner = await contract.getOwner();
-   console.log("🔑 Contract Owner:", owner);
-
    const currentUser = await signer.getAddress();
-   console.log("🧑 You (Connected Account):", currentUser);
+   const owner = await contract.getOwner();
 
-   if (owner.toLowerCase() === currentUser.toLowerCase()) {
+   console.log("🔑 Contract Owner:", owner);
+   alert(`Contract Owner : ${owner}`);
+
+   if (owner.toLowerCase() == currentUser.toLowerCase()) {
+      console.log("🧑 You (Connected Account):", currentUser);
       console.log("✅ You ARE the contract owner");
+
+      return true;
    } else {
       console.log("❌ You are NOT the contract owner");
+
+      return false;
    }
 }
