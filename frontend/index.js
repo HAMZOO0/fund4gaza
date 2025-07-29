@@ -86,42 +86,27 @@ async function getBalance() {
       alert(`Contract Balance: ${ethers.utils.formatEther(string_balance)} ETH`);
 
       console.log(ethers.utils.formatEther(string_balance));
-
-      // Test basic call
-      // const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(ContractAddress, abi, signer);
-
-      const testCall = await contract.provider.getCode(ContractAddress);
-      console.log("Contract code at address:", testCall);
    }
 }
 
 async function findContractOwner() {
-   try {
-      console.log("Contract Address:", ContractAddress);
-      console.log("ABI:", abi);
+   const provider = new ethers.providers.Web3Provider(window.ethereum);
+   const signer = provider.getSigner();
+   const contract = new ethers.Contract(ContractAddress, abi, signer);
+   const currentUser = await signer.getAddress();
+   const owner = await contract.getOwner();
 
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(ContractAddress, abi, signer);
+   console.log("🔑 Contract Owner:", owner);
+   alert(`Contract Owner : ${owner}`);
 
-      // Test basic call
-      const testCall = await contract.provider.getCode(ContractAddress);
-      console.log("Contract code at address:", testCall);
+   if (owner.toLowerCase() == currentUser.toLowerCase()) {
+      console.log("🧑 You (Connected Account):", currentUser);
+      console.log("✅ You ARE the contract owner");
 
-      const owner = await contract.getOwner();
-      const currentUser = await signer.getAddress();
+      return true;
+   } else {
+      console.log("❌ You are NOT the contract owner");
 
-      console.log("Owner:", owner, "Current User:", currentUser);
-      return owner.toLowerCase() === currentUser.toLowerCase();
-   } catch (error) {
-      console.error("Full error details:", {
-         error,
-         message: error.message,
-         data: error.data,
-         stack: error.stack,
-      });
-      throw error; // Re-throw to see complete error in console
+      return false;
    }
 }
