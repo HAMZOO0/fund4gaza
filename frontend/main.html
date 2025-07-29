@@ -141,30 +141,26 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans bg-gradient-to-b from-palestine-100 to-white min-h-screen">
     <!-- Navigation Bar -->
-    <nav class="bg-palestine-800 text-white sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-hands-helping text-2xl mr-2 text-palestine-300"></i>
-                        <span class="font-bold text-xl">Fund4Gaza</span>
-                    </div>
-                    <div class="hidden md:ml-10 md:flex md:space-x-8">
-                        <a href="#" class="text-white border-b-2 border-palestine-300 px-1 pt-1 text-sm font-medium">Home</a>
-                        <a href="#" class="text-palestine-200 hover:text-white px-1 pt-1 text-sm font-medium">About</a>
-                        <a href="#" class="text-palestine-200 hover:text-white px-1 pt-1 text-sm font-medium">Impact</a>
-                        <a href="#" class="text-palestine-200 hover:text-white px-1 pt-1 text-sm font-medium">News</a>
-                        <a href="#" class="text-palestine-200 hover:text-white px-1 pt-1 text-sm font-medium">Contact</a>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <button class="bg-palestine-500 text-white px-4 py-2 rounded-lg hover:bg-palestine-600 transition flex items-center">
-                        <i class="fas fa-donate mr-2"></i> Donate Now
-                    </button>
+   <nav class="bg-palestine-800 text-white sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fas fa-hands-helping text-2xl mr-2 text-palestine-300"></i>
+                    <span class="font-bold text-xl">Fund4Gaza</span>
                 </div>
             </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-white hover:text-palestine-300 px-3 py-2 rounded-md text-sm font-medium transition">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <button id="connectButton" class="bg-palestine-500 text-white px-4 py-2 rounded-lg hover:bg-palestine-600 transition flex items-center">
+                    <i class="fas fa-wallet mr-2"></i> Connect Wallet
+                </button>
+            </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- News Ticker -->
     <div class="news-ticker bg-palestine-700 text-white py-3 text-sm">
@@ -295,18 +291,18 @@
                     <h1 class="text-3xl font-bold text-center text-palestine-600">
                         <i class="fas fa-hand-holding-heart mr-2"></i>Fund4Gaza
                     </h1>
-                    <p class="text-center mt-2 text-sm text-gray-500">
-                        Support Gaza by donating ETH. Every bit counts 🕊️
-                    </p>
-
-                    <div class="mt-6 text-center">
-                        <button
-                            id="connectButton"
-                            class="bg-palestine-600 text-white py-3 px-6 rounded-xl hover:bg-palestine-700 transition w-full flex items-center justify-center"
-                        >
-                            <i class="fas fa-wallet mr-2"></i> Connect Wallet
-                        </button>
-                    </div>
+                   
+              <div class="mt-4 p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+        <div class="flex items-center">
+            <i class="fas fa-info-circle text-yellow-500 mr-2"></i>
+            <p class="text-sm text-yellow-700">
+                <span class="font-medium">Important:</span> Use only Sepolia Testnet ETH
+                <a href="https://sepoliafaucet.com" target="_blank" class="text-palestine-600 hover:underline ml-1">
+                    (Get test ETH)
+                </a>
+            </p>
+        </div>
+    </div>
 
                     <div class="mt-6">
                         <label class="block text-sm font-medium mb-1">ETH Amount</label>
