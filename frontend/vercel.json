@@ -9,5 +9,11 @@
       "src": "*.js",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/main.html"
+    }
   ]
 }
