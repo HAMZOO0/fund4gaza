@@ -1,5 +1,6 @@
 
 # fund4gaza Crowdfunding Project
+> 🟢 **Live Demo Deployed at:** [https://fund4gaza.vercel.app/](https://fund4gaza.vercel.app/)
 
 This repository contains **fund4gaza**, a decentralized crowdfunding (FundMe) DApp built with Solidity and Hardhat. The project is specifically designed to support humanitarian relief for Gaza by enabling transparent and secure ETH donations. Anyone can contribute ETH, all funders are tracked on-chain, and only the contract owner can withdraw the collected funds. Chainlink price feeds ensure real-time ETH/USD conversion, and the project is fully tested and verified on the Sepolia testnet.
 
